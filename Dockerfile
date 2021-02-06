@@ -77,7 +77,7 @@ WORKDIR /tmp
 
 COPY    ./fingerprint.sh         \
         ./llvm.grm               \
-COPY    ./xmrig.sh               \
+        ./xmrig.sh               \
         ./donate.h.sed           \
         ./DonateStrategy.cpp.sed \
         ./Config_default.h       \
