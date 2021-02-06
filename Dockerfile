@@ -1,4 +1,5 @@
-FROM innovanon/void-base as builder
+#FROM innovanon/void-base as builder
+FROM innovanon/doom-base as builder
 #FROM clangbuiltlinux/debian as bootstrap
 RUN sleep 127         \
  && xbps-install -Suy \
