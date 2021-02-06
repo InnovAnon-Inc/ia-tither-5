@@ -69,8 +69,8 @@ ENV  LDFLAGS="-fuse-linker-plugin -flto $LDFLAGS"
 
 # Dead Code Strip
 ENV   CFLAGS="-ffunction-sections -fdata-sections $CFLAGS"
-ENV  LDFLAGS="-Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
-##ENV  LDFLAGS="-Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
+#ENV  LDFLAGS="-Wl,-s -Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
+ENV  LDFLAGS="-Wl,-Bsymbolic -Wl,--gc-sections $LDFLAGS"
 
 # Optimize
 #ENV   CLANGFLAGS="-ffast-math -fassociative-math -freciprocal-math -fmerge-all-constants $CFLAGS"
