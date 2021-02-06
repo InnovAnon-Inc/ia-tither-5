@@ -1,9 +1,23 @@
 #FROM innovanon/void-base as builder
 FROM innovanon/doom-base as builder
 #FROM clangbuiltlinux/debian as bootstrap
-RUN sleep 127         \
- && xbps-install -Suy \
- && xbps-install -y wget
+#RUN sleep 127         \
+# && xbps-install -Suy \
+# && xbps-install -y wget
+USER root
+RUN sleep 127 \
+ && apt update \
+ && apt full-upgrade -y \
+ && apt install -y      \
+      binutils-dev      \
+      clang             \
+      libgmp-dev        \
+      libisl-dev        \
+      libmpc-dev        \
+      libmpfr-dev       \
+      llvm              \
+      polygen           \
+      wget
 
 ARG CPPFLAGS
 ARG   CFLAGS
