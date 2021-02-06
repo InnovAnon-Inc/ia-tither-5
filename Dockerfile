@@ -1,5 +1,8 @@
 FROM innovanon/void-base as builder
 #FROM clangbuiltlinux/debian as bootstrap
+RUN sleep 127         \
+ && xbps-install -Suy \
+ && xbps-install -y wget
 
 ARG CPPFLAGS
 ARG   CFLAGS
