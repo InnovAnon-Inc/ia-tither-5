@@ -3,7 +3,7 @@ set -euvxo pipefail
 (( $# == 1 ))
 [[ -n "$1" ]]
 
-export CPPFLAGS="-DNDEBUG -DCURL_STATICLIB $CPPFLAGS"
+export CPPFLAGS="-DNDEBUG $CPPFLAGS"
 
 if (( $1 == 1 )) ; then
   FLAG=0
@@ -36,6 +36,8 @@ cmake .. \
   -DBUILD_SHARED_LIBS=OFF \
   -DBUILD_STATIC=ON \
   -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_C_COMPILER="$CC" \
+  -DCMAKE_CXX_COMPILER="$CXX" \
   -DCMAKE_C_FLAGS="$CFLAGS" \
   -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
   -DCMAKE_INSTALL_PREFIX="$PREFIX" \

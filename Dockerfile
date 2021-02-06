@@ -11,11 +11,12 @@ RUN sleep 127 \
  && apt install -y      \
       binutils-dev      \
       clang             \
+      clang-tools       \
       libgmp-dev        \
       libisl-dev        \
       libmpc-dev        \
       libmpfr-dev       \
-      llvm              \
+      llvm-dev          \
       polygen           \
       wget
 
